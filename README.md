@@ -1,5 +1,7 @@
-# DCMS - A Decentralised Headless Content Management System
+# Content Block
 
-Goal: Provide a way for decentralised applications on blockstack to share
+## A Decentralised Headless Content Management System
+
+A way for decentralised applications built on Blockstack to share
 content and pre-defined content templates.  
 
