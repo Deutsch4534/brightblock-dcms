@@ -27,9 +27,8 @@
  </template>
 
 <script>
-
-import NoteService from '../services/notes.service'
-import Editable from './Editable'
+import NoteService from '../../services/notes.service'
+import ContentEdit from './ContentEdit'
 
 export default {
   name: 'NotesEdit',
@@ -43,7 +42,7 @@ export default {
     }
   },
   components: {
-    Editable
+    ContentEdit
   },
   methods: {
     saveContent: (note) => {

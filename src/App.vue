@@ -1,34 +1,26 @@
 <template>
-  <div id="app">
-    <strapline />
-    <navbar />
-    <router-view></router-view>
-  </div>
+    <div>
+      <navigation/>
+      <router-view></router-view>
+      <footBar/>
+    </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
-import Strapline from '@/components/Strapline'
+import Navigation from '@/components/nav/Navigation'
+import Home from '@/components/home/Home'
+import FootBar from '@/components/home/FootBar'
 
 export default {
   name: 'App',
-  components: { 
-    Navbar,
-    Strapline
+  components: {
+    Navigation,
+    Home,
+    FootBar
   }
 }
 </script>
 
-<style>
-html, body, #app {
-  height: 100%;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 14px;
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-}
+<style lang="scss">
+    @import "../node_modules/bulma/bulma.sass";
 </style>

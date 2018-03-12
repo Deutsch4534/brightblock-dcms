@@ -1,8 +1,6 @@
-# Content Block
+# brightbloc
 
-## A Decentralised Headless CMS
-
-> Providing a way for decentralised apps built on blockstack to share content and content schema.
+> Rebuild of brightbloc.org using vuejs
 
 ## Build Setup
 
