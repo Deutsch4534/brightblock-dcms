@@ -2,8 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '../components/home/Home.vue'
-import GetBrowser from '../components/auth/GetBrowser.vue'
-import Login from '../components/auth/Login.vue'
 import Content from '../components/content/Content'
 import ContentCreate from '@/components/content/ContentCreate'
 import ContentEdit from '@/components/content/ContentEdit'
@@ -39,14 +37,6 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: Home
-    }, {
-      path: '/getBrowser',
-      name: 'getBrowser',
-      component: GetBrowser
-    }, {
-      path: '/login',
-      name: 'login',
-      component: Login
     }
   ]
 })

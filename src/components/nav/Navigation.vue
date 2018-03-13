@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-dark " role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <div class="navbar-item">
       <router-link class="fa-rotate-270" to="/" style="font-size:2.6em; color:Tomato">
@@ -23,22 +23,30 @@
           Blockstack Browser
       </a>
     </div>
-    <nav-item-auth />
+    <div class="navbar-end">
+      <bright-block-auth />
+    </div>
   </div>
 </nav>
 </template>
 
 <script>
-import NavItemAuth from '@/components/nav/NavItemAuth'
+import BrightBlockAuth from 'bright-block-auth'
 
 export default {
   name: 'Navigation',
   data: () => {
     return {
+      debug: false
+    }
+  },
+  mounted () {
+    if (this.$route.query && this.$route.query.debug) {
+      this.debug = true
     }
   },
   components: {
-    NavItemAuth
+    BrightBlockAuth
   }
 }
 </script>
@@ -47,7 +55,7 @@ export default {
 <style scoped>
 .avatar {
   width: 40px;
-  height: 40px;
+  height: 60px;
   margin-right: 10px;
 }
 </style>
