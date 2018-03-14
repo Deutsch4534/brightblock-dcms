@@ -1,7 +1,7 @@
 {
-  "name": "brightbloc",
+  "name": "brightblock-dcms",
   "version": "1.0.0",
-  "description": "Rebuild of brightbloc.org using vuejs",
+  "description": "A decentralised headless content management system on top of blockstack",
   "author": "Mike Cohen <mjoecohen@gmail.com>",
   "private": true,
   "scripts": {
