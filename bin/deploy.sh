@@ -5,14 +5,14 @@
 ############################################################
 
 SERVER=$1
-DEPLOY_SERVER=$SERVER:/home/bob/deployment/content-block
+DEPLOY_SERVER=$SERVER:/home/bob/deployment/brightblock-dcms
 
-printf "\nSyncing content-block to $DEPLOY_SERVER\n\n"
+printf "\nSyncing brightblock-dcms to $DEPLOY_SERVER\n\n"
 
 rsync -aP --quiet -e "ssh -p 7019" dist/ bob@$DEPLOY_SERVER
 
 ssh -i ~/.ssh/id_rsa -p 7019 bob@$SERVER "
-	rsync -aP --quiet  /home/bob/deployment/content-block/  rsync://localhost:10873/volume/deployments/nginx/html/content-block
+	rsync -aP --quiet  /home/bob/deployment/brightblock-dcms/  rsync://localhost:10873/volume/deployments/nginx/html/brightblock-dcms
 ";
 
-printf "\nFinished content-block nginx build and deployment.\n\n"
+printf "\nFinished brightblock-dcms nginx build and deployment.\n\n"

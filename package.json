@@ -1,6 +1,6 @@
 {
   "name": "brightblock-dcms",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "A decentralised headless content management system on top of blockstack",
   "author": "Mike Cohen <mjoecohen@gmail.com>",
   "private": true,
@@ -16,7 +16,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "blockstack": "^0.15.1",
-    "bright-block-auth": "^1.0.0",
+    "bright-block-auth": "^1.0.6",
     "bulma": "^0.6.2",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",

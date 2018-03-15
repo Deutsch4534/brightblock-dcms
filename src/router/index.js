@@ -6,6 +6,8 @@ import Content from '../components/content/Content'
 import ContentCreate from '@/components/content/ContentCreate'
 import ContentEdit from '@/components/content/ContentEdit'
 import ContentShow from '@/components/content/ContentShow'
+import Login from 'bright-block-auth/src/components/auth/Login'
+import authorization from 'bright-block-auth'
 
 Vue.use(Router)
 
@@ -34,6 +36,14 @@ const router = new Router({
         }
       ]
     }, {
+      path: '/login',
+      name: 'login',
+      component: Login
+    }, {
+      path: '/getBrowser',
+      name: 'login',
+      component: Login
+    }, {
       path: '/',
       name: 'home',
       component: Home
@@ -41,15 +51,21 @@ const router = new Router({
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-//   if (authorization.isLoggedIn()) {
-//     // authorization.loadUserData()
-//     next()
-//   } else if (authorization.isSignInPending()) {
-//     next()
-//   } else {
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    if (!authorization.isLoggedIn()) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next() // make sure to always call next()!
+  }
+})
 
 export default router

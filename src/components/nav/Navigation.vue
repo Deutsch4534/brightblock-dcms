@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar is-dark " role="navigation" aria-label="main navigation">
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <div class="navbar-item">
       <router-link class="fa-rotate-270" to="/" style="font-size:2.6em; color:Tomato">
@@ -24,6 +24,11 @@
       </a>
     </div>
     <div class="navbar-end">
+      <router-link
+        class="navbar-item"
+        to="/content">
+          Content Bloc
+      </router-link>
       <bright-block-auth />
     </div>
   </div>
@@ -31,7 +36,8 @@
 </template>
 
 <script>
-import BrightBlockAuth from 'bright-block-auth'
+import BrightBlockAuth from 'bright-block-auth/src/components/auth/BrightBlockAuth'
+import bulma from '@/services/bulma'
 
 export default {
   name: 'Navigation',
@@ -41,6 +47,7 @@ export default {
     }
   },
   mounted () {
+    bulma.initDropdowns()
     if (this.$route.query && this.$route.query.debug) {
       this.debug = true
     }
