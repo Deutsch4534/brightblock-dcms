@@ -4,7 +4,7 @@
       <div class="header">
         <span class="title">
           <h3>
-            <editable :content.sync="title"></editable>
+            <content-edit :content.sync="title"></content-edit>
             <button
               @click="saveContent({title, desc, content})"
               class="btn btn-outline-secondary right">
@@ -17,24 +17,23 @@
         </span>
       </div>
       <div class="desc">
-        <editable :content.sync="desc"></editable>
+        <content-edit :content.sync="desc"></content-edit>
       </div>
       <div class="">
-        <editable :content.sync="content"></editable>
+        <content-edit :content.sync="content"></content-edit>
       </div>
     </div>
    </div>
  </template>
 
 <script>
-import NoteService from '../../services/notes.service'
 import ContentEdit from './ContentEdit'
 
 export default {
   name: 'NotesEdit',
   props: [ 'notesId' ],
   data () {
-    const note = NoteService.get(this.notesId)
+    const note = {}
     return {
       title: note.title || 'Title',
       desc: note.desc || 'Enter your description',
@@ -47,7 +46,6 @@ export default {
   methods: {
     saveContent: (note) => {
       // You have the content to save
-      NoteService.create(note)
     }
   }
 }

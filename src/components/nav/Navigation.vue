@@ -16,19 +16,16 @@
     </div>
   </div>
   <div id="navMenu" class="navbar-menu">
+  <!--
     <div class="navbar-start">
-      <a href="http://localhost:8888/"
-        class="navbar-item"
-        target="_blank">
-          Blockstack Browser
-      </a>
-    </div>
-    <div class="navbar-end">
       <router-link
         class="navbar-item"
         to="/content">
-          Content Bloc
+          Admin
       </router-link>
+    </div>
+    -->
+    <div class="navbar-end">
       <bright-block-auth />
     </div>
   </div>

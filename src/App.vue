@@ -1,9 +1,12 @@
 <template>
-    <div>
+  <div>
+    <div class="main">
       <navigation/>
+      <login />
       <router-view></router-view>
-      <footBar/>
     </div>
+    <footBar/>
+  </div>
 </template>
 
 <script>
@@ -23,4 +26,18 @@ export default {
 
 <style lang="scss">
     @import "../node_modules/bulma/bulma.sass";
+</style>
+<style lang="css">
+p {
+  margin-bottom: 15px;
+}
+.container {
+  padding-top: 2rem;
+}
+.main {
+  min-height: calc(100vh - 90px);
+}
+.footer {
+  height: 50px;
+}
 </style>

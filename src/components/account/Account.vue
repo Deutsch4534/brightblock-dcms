@@ -2,7 +2,7 @@
 <section class="page">
   <div class="columns">
     <div class="column is-one-fifth">
-      <side-bar />
+      <account-side-bar />
     </div>
     <div class="column">
       <router-view></router-view>
@@ -12,13 +12,16 @@
 </template>
 
 <script>
-import SideBar from '@/components/SideBar'
+import AccountSideBar from '@/components/account/AccountSideBar'
 
 export default {
   data: () => ({
   }),
   components: {
-    SideBar
+    AccountSideBar
   }
 }
 </script>
+
+<style>
+</style>

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import NoteService from '../../services/notes.service'
+import NoteService from '../../services/projectsService'
 
 export default {
   name: 'NotesShow',
