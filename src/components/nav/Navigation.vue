@@ -26,7 +26,7 @@
     </div>
     -->
     <div class="navbar-end">
-      <bright-block-auth />
+      <bright-block-auth showAccountLink="true"/>
     </div>
   </div>
 </nav>

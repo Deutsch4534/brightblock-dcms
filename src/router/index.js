@@ -13,6 +13,7 @@ import ContentShow from '@/components/content/ContentShow'
 import Account from '../components/account/Account'
 import AccountProfile from '../components/account/AccountProfile'
 import AccountLookup from '../components/account/AccountLookup'
+import AccountZonefile from '../components/account/AccountZonefile'
 import Login from 'bright-block-auth/src/components/auth/Login'
 import authorization from 'bright-block-auth'
 
@@ -78,6 +79,9 @@ const router = new Router({
         }, {
           path: '/account/lookup',
           component: AccountLookup
+        }, {
+          path: '/account/zonefile',
+          component: AccountZonefile
         }
       ]
     }, {
