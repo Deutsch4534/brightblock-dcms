@@ -8,6 +8,9 @@
       <router-link class="fa-rotate-270" to="/" style="margin-left: -25px; margin-bottom: 0px; font-size:2.6em; color:Tomato">
         <i class="fas fa-bicycle"></i>
       </router-link>
+      <router-link to="/" style="font-size:1.6em; color:Tomato">
+        Content Block
+      </router-link>
     </div>
     <div class="navbar-burger" data-target="navMenu">
       <span></span>

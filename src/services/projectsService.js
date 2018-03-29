@@ -9,8 +9,12 @@ const projectsService = {
   fetch: function () {
     return new Promise(resolve => {
       storage.getFile(PROJECTS_FILE).then((projects) => {
-        this.projects = projects
-        resolve(projects)
+        if (projects && projects.errorMessage) {
+          resolve(false)
+        } else {
+          this.projects = projects
+          resolve(projects)
+        }
       }).catch(e => {
         console.log('projects: e : ', e)
         resolve(false)

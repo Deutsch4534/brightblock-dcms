@@ -1,0 +1,59 @@
+
+bb-ui-local
+ACTION: http://localhost:8080/#/account/files/mike.personal.id
+HUBURL: https://gaia.blockstack.org/hub/1EELUEFaFakdrZuGf9Yf2YLLrjj3sHYBKb/projects.json
+RESULT: []
+HTTP:   404
+
+
+bb-dcms-local
+ACTION: http://localhost:8081/#/account/files/mike.personal.id
+HUBURL: ??
+RESULT: [ { "updated": 1521641833442, "projectId": 1521641833442, "name": "Project Y", "description": "Project about Yiness" }, { "updated": 1521643076712, "projectId": 1521643076712, "name": "Project Z", "description": "Project about Ziness" }, { "updated": 1521646144349, "projectId": 1521646144349, "name": "Project P", "description": "Project about Piness" } ]
+HTTP: 200
+
+
+
+http://localhost:8081/
+hub url: https://gaia.blockstack.org/hub/153viFk9dD3doMpriwdrDefG5gLAEKbm6M
+
+
+app url: https://app.graphitedocs.com
+hub url: https://gaia.blockstack.org/hub/14hsKwB46Fhb6ckXg5s11tWph9uVdZHtBq/
+
+app url: http://localhost:8080
+hub url: https://gaia.blockstack.org/hub/1EELUEFaFakdrZuGf9Yf2YLLrjj3sHYBKb/
+
+app url: http://localhost:8081
+hub url: https://gaia.blockstack.org/hub/153viFk9dD3doMpriwdrDefG5gLAEKbm6M/
+
+app url: http://dcms.brightblock.org
+hub url: https://gaia.blockstack.org/hub/12rmrCFVizKzbrxhxfeDiBqYEhb1C6j4Sv/
+
+app url: http://www.brightblock.org
+hub url: https://gaia.blockstack.org/hub/1G6b15WNSNnJiBhkMjL3SAbGfTnSsME25t/
+
+getUserAppFileUrl()
+options = {username: "mike.personal.id", app: "http://dcms.brightblock.org"}
+
+dcms:8081
+gaiaHubConfig
+{
+url_prefix: "https://gaia.blockstack.org/hub/",
+address: "153viFk9dD3doMpriwdrDefG5gLAEKbm6M",
+token: "eyJwdWJsaWNrZXkiOiIwM2EwZWJiZWFjZGRjZmYxMmIxMDc0Yj…lYjcxMjY3MTZmNjIxM2VkNDc2MzhhYjM0ZWRmNjNiOTAzYyJ9",
+server: "https://hub.blockstack.org"
+}
+
+getFullReadUrl:
+hubConfig.url_prefix + hubConfig.address + '/' + filename
+url_prefix=https://gaia.blockstack.org/hub/
+address=153viFk9dD3doMpriwdrDefG5gLAEKbm6M
+filename=projects.json
+
+
+
+UI:8080
+https://gaia.blockstack.org/hub/
+1EELUEFaFakdrZuGf9Yf2YLLrjj3sHYBKb
+projects.json
