@@ -16,11 +16,8 @@ printf "\t4. Jenkins rebuilds the nginx container.\n";
 printf "\t5. Jenkins tags and pushes the container.\n";
 printf "\t6. Jenkins ssh to the target server and pulls the image.\n";
 
+ls -lt dist
+cp -r dist/ /var/jenkins_home/brightblock/brightblock-docker/brightblock/nginx/www/brightblock-dcms
 
-rsync -aP --quiet -e "ssh -p 7019" dist/ bob@$DEPLOY_SERVER
-
-ssh -i ~/.ssh/id_rsa -p 7019 bob@$SERVER "
-	rsync -aP --quiet  /home/bob/deployment/brightblock-dcms/  rsync://localhost:10873/volume/deployments/nginx/html/brightblock-dcms
-";
 
 printf "\nFinished brightblock-dcms nginx build and deployment.\n\n"
