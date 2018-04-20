@@ -12,6 +12,7 @@ printf "\t5. Jenkins tags and pushes the image.\n";
 printf "\t6. Jenkins ssh to the target server and pulls the image.\n\n";
 
 DOCKER_COMPOSE_CMD='sudo /usr/local/bin/docker-compose'
+DOCKER_ID_USER='mijoco'
 DOCKER_CMD='sudo /usr/bin/docker'
 DOCKER_HOME=/var/jenkins_home/brightblock/brightblock-docker/brightblock
 ls -lt dist
