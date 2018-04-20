@@ -4,7 +4,7 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title is-1">Content Block</h1>
-        <h2 class="subtitle is-3">Decentralised Content Management Platform</h2>
+        <h2 class="subtitle is-3">Decentralised CMS Platform</h2>
         <h3 class="subtitle is-1">
           <router-link
             class="button"

@@ -2,13 +2,13 @@ import storage from 'bright-block-auth/src/services/storage'
 import moment from 'moment'
 var _ = require('lodash')
 
-const PROJECTS_FILE = 'projects.json'
+const MY_ROOT_FILE = 'projects.json'
 
 const projectsService = {
   projects: undefined,
   fetch: function () {
     return new Promise(resolve => {
-      storage.getFile(PROJECTS_FILE).then((projects) => {
+      storage.getFile(MY_ROOT_FILE).then((projects) => {
         if (projects && projects.errorMessage) {
           resolve(false)
         } else {
@@ -35,19 +35,19 @@ const projectsService = {
       })
     })
   },
-  saveOrUpdate: function (uiProject) {
-    let myProject = this.getProject(uiProject.projectId)
-    if (myProject) {
-      myProject.updated = moment.now()
-      myProject.name = uiProject.name
-      myProject.description = uiProject.description
+  saveOrUpdate: function (uiObject) {
+    let myObject = this.getProject(uiObject.projectId)
+    if (myObject) {
+      myObject.updated = moment.now()
+      myObject.name = uiObject.name
+      myObject.description = uiObject.description
     } else {
-      uiProject.projectId = moment.now()
-      uiProject.updated = moment.now()
+      uiObject.projectId = moment.now()
+      uiObject.updated = moment.now()
       if (!this.projects) {
         this.projects = []
       }
-      this.projects.push(uiProject)
+      this.projects.push(uiObject)
     }
     return new Promise(resolve => {
       storage.putFile(this.projects).then((projects) => {
@@ -60,15 +60,15 @@ const projectsService = {
     })
   },
   getProject: function (projectId) {
-    let myProject
+    let myObject
     if (projectId) {
       _.forEach(this.projects, function (project) {
         if (project.projectId === projectId) {
-          myProject = project
+          myObject = project
         }
       })
     }
-    return myProject
+    return myObject
   }
 }
 export default projectsService

@@ -2,10 +2,18 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '../components/home/Home.vue'
+
 import Projects from '../components/projects/Projects'
 import ConfirmDeleteProject from '../components/projects/ConfirmDeleteProject'
 import CreateProject from '../components/projects/CreateProject'
 import ListProjects from '../components/projects/ListProjects'
+
+import Articles from '../components/articles/Articles'
+import Article from '../components/articles/Article'
+import ConfirmDeleteArticle from '../components/articles/ConfirmDeleteArticle'
+import CreateArticle from '../components/articles/CreateArticle'
+import ListArticles from '../components/articles/ListArticles'
+
 import Content from '../components/content/Content'
 import ContentCreate from '@/components/content/ContentCreate'
 import ContentEdit from '@/components/content/ContentEdit'
@@ -64,6 +72,26 @@ const router = new Router({
         }, {
           path: '/projects/confirmDelete/:projectId',
           component: ConfirmDeleteProject
+        }
+      ]
+    }, {
+      path: '/articles',
+      name: 'articles',
+      meta: { requiresAuth: true },
+      component: Articles,
+      children: [
+        {
+          path: '/articles/create',
+          component: CreateArticle
+        }, {
+          path: '/articles/list',
+          component: ListArticles
+        }, {
+          path: '/articles/:articleId',
+          component: Article
+        }, {
+          path: '/articles/confirmDelete/:articleId',
+          component: ConfirmDeleteArticle
         }
       ]
     }, {
