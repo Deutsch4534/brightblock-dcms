@@ -17,7 +17,7 @@ printf "\t5. Jenkins tags and pushes the container.\n";
 printf "\t6. Jenkins ssh to the target server and pulls the image.\n";
 
 ls -lt dist
-cp -r dist/ /var/jenkins_home/brightblock/brightblock-docker/brightblock/nginx/www/brightblock-dcms
+cp -r dist/* /var/jenkins_home/brightblock/brightblock-docker/brightblock/nginx/www/brightblock-dcms
 
 
 printf "\nFinished brightblock-dcms nginx build and deployment.\n\n"
