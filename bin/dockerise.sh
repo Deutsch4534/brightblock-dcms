@@ -27,6 +27,6 @@ $DOCKER_CMD ps -a
 $DOCKER_COMPOSE_CMD build
 
 printf "Finished brightblock-dcms nginx build and deployment.\n"
-printf "-----------------------------------------------------------------------------------------------------\n";
+printf "\n-----------------------------------------------------------------------------------------------------\n";
 
 popd > /dev/null
