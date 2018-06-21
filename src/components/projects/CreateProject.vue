@@ -1,8 +1,8 @@
 <template>
   <div class="columns">
     <div class="column content is-8">
-      <h1 class="title">New Project</h1>
-      <p>Provide a name and short description of your new project!</p>
+      <h1 class="title">Create a Record of Ownership</h1>
+      <p>Provide a name and short description of the item.</p>
       <div class="field">
         <label class="label">Name</label>
         <div class="control">
@@ -10,7 +10,7 @@
             v-model="project.name"
             class="input"
             type="text"
-            placeholder="name of your project..">
+            placeholder="name of your item..">
         </div>
       </div>
       <div class="field">
@@ -19,13 +19,13 @@
           <textarea
             v-model="project.description"
             class="textarea"
-            placeholder="Short description of your project..">
+            placeholder="Short description..">
           </textarea>
         </div>
       </div>
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link" v-on:click="create">Submit</button>
+          <button class="button is-link" v-on:click="create">Register Item</button>
         </div>
         <div class="control">
             <router-link
@@ -53,7 +53,8 @@ export default {
         updated: undefined,
         projectId: undefined,
         name: '',
-        description: ''
+        description: '',
+        registered: false
       },
     }
   },
@@ -68,7 +69,7 @@ export default {
   methods: {
     create: function (event) {
       projectsService.saveOrUpdate(this.project).then(() => {
-        this.$router.push('/projects/list')
+        this.$router.push('/projects/register/' + this.project.projectId)
       })
     }
   }

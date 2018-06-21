@@ -2,7 +2,7 @@
 <section>
   <div class="columns">
     <div class="column content is-12">
-      <h1 class="title">Your Projects</h1>
+      <h1 class="title">Records of Ownership</h1>
     </div>
   </div>
   <div class="columns project"

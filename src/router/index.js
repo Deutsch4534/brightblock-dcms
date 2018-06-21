@@ -4,9 +4,10 @@ import Router from 'vue-router'
 import Home from '../components/home/Home.vue'
 
 import Projects from '../components/projects/Projects'
-import ConfirmDeleteProject from '../components/projects/ConfirmDeleteProject'
+import ConfirmDelete from '../components/projects/ConfirmDelete'
 import CreateProject from '../components/projects/CreateProject'
 import ListProjects from '../components/projects/ListProjects'
+import RegisterItem from '../components/projects/RegisterItem'
 
 import Articles from '../components/articles/Articles'
 import Article from '../components/articles/Article'
@@ -70,8 +71,11 @@ const router = new Router({
           path: '/projects/:projectId',
           component: CreateProject
         }, {
+          path: '/projects/register/:projectId',
+          component: RegisterItem
+        }, {
           path: '/projects/confirmDelete/:projectId',
-          component: ConfirmDeleteProject
+          component: ConfirmDelete
         }
       ]
     }, {

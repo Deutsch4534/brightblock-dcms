@@ -7,12 +7,12 @@
     <li v-bind:class="{ 'is-active': link1Active }">
       <router-link
         to="/projects/create">
-        New Project
+        Add Item
       </router-link>
       <li v-bind:class="{ 'is-active': link2Active }">
         <router-link
           to="/projects/list">
-          All Projects
+          My Items
         </router-link>
         <ul>
           <li
